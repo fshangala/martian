@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
+
+[node name="GameOver" type="Control"]
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="Score" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 89.0
+margin_bottom = 46.0
+rect_scale = Vector2( 2, 2 )
+text = "Score: 0"
+uppercase = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 352.0
+margin_top = 128.0
+margin_right = 428.0
+margin_bottom = 142.0
+rect_scale = Vector2( 4, 4 )
+text = "Game Over"
+uppercase = true
+
+[node name="Restart" type="Button" parent="."]
+margin_left = 320.0
+margin_top = 224.0
+margin_right = 416.0
+margin_bottom = 244.0
+rect_scale = Vector2( 4, 4 )
+text = "Restart"
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 320.0
+margin_top = 352.0
+margin_right = 416.0
+margin_bottom = 372.0
+rect_scale = Vector2( 4, 4 )
+text = "Home"
+
+[connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
