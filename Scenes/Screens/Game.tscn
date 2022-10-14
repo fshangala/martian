@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Grass/grassRight.png" type="Texture" id=2]
@@ -15,7 +15,7 @@
 [ext_resource path="res://Assets/Grass/grassCorner_left.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Grass/grassHill_right.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Grass/grassCenter.png" type="Texture" id=15]
-[ext_resource path="res://Scripts/ScrollingBG.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/ParallaxLayer.gd" type="Script" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -313,23 +313,17 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 } ]
 4/z_index = 0
 
-[sub_resource type="Shader" id=21]
-code = "shader_type canvas_item;
-uniform float scroll_speed;
-
-void fragment(){
-    vec2 shifteduv = UV;
-    shifteduv .x += TIME * scroll_speed;
-    vec4 color = texture(TEXTURE, shifteduv);
-    COLOR = color;
-}"
-
-[sub_resource type="ShaderMaterial" id=22]
-shader = SubResource( 21 )
-shader_param/scroll_speed = null
-
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+script = ExtResource( 17 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 512, 112 )
+texture = ExtResource( 10 )
 
 [node name="Grass" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
@@ -363,15 +357,5 @@ limit_top = -1000
 limit_bottom = 600
 limit_smoothed = true
 smoothing_enabled = true
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D"]
-material = SubResource( 22 )
-margin_left = -512.0
-margin_top = -722.0
-margin_right = 512.0
-margin_bottom = 302.0
-texture = ExtResource( 10 )
-stretch_mode = 2
-script = ExtResource( 16 )
 
 [node name="UserInterface" parent="." instance=ExtResource( 8 )]
