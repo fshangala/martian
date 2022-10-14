@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Grass/grassRight.png" type="Texture" id=2]
@@ -9,6 +9,13 @@
 [ext_resource path="res://Assets/Grass/grassCliff_right.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/UserInterface.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/GreenBackround/colored_grass.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Grass/grassHill_left.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Grass/grassCorner_right.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Grass/grassCorner_left.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Grass/grassHill_right.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Grass/grassCenter.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/ScrollingBG.gd" type="Script" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -184,12 +191,145 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 } ]
 2/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 128, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
+
+[sub_resource type="TileSet" id=20]
+0/name = "grassHill_right.png 0"
+0/texture = ExtResource( 14 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 15 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "grassCorner_right.png 1"
+1/texture = ExtResource( 12 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 128, 128 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 16 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "grassCenter.png 2"
+2/texture = ExtResource( 15 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 128, 128 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 17 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "grassCorner_left.png 3"
+3/texture = ExtResource( 13 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 128, 128 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 18 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "grassHill_left.png 4"
+4/texture = ExtResource( 11 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 128, 128 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 19 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+
+[sub_resource type="Shader" id=21]
+code = "shader_type canvas_item;
+uniform float scroll_speed;
+
+void fragment(){
+    vec2 shifteduv = UV;
+    shifteduv .x += TIME * scroll_speed;
+    vec4 color = texture(TEXTURE, shifteduv);
+    COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=22]
+shader = SubResource( 21 )
+shader_param/scroll_speed = null
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
-
-[node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 124, 272 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Grass" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
@@ -201,6 +341,20 @@ tile_set = SubResource( 6 )
 cell_size = Vector2( 128, 128 )
 format = 1
 
+[node name="GrassTop" type="TileMap" parent="."]
+tile_set = SubResource( 10 )
+cell_size = Vector2( 128, 128 )
+format = 1
+
+[node name="SluntPlane" type="TileMap" parent="."]
+tile_set = SubResource( 20 )
+cell_size = Vector2( 128, 128 )
+format = 1
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 124, 272 )
+scale = Vector2( 0.5, 0.5 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 302 )
 current = true
@@ -210,9 +364,14 @@ limit_bottom = 600
 limit_smoothed = true
 smoothing_enabled = true
 
-[node name="GrassTop" type="TileMap" parent="."]
-tile_set = SubResource( 10 )
-cell_size = Vector2( 128, 128 )
-format = 1
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+material = SubResource( 22 )
+margin_left = -512.0
+margin_top = -722.0
+margin_right = 512.0
+margin_bottom = 302.0
+texture = ExtResource( 10 )
+stretch_mode = 2
+script = ExtResource( 16 )
 
 [node name="UserInterface" parent="." instance=ExtResource( 8 )]

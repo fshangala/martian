@@ -31,7 +31,7 @@ func dropCoin():
 
 func buildObstacle():
 	randomize()
-	var obstacleId = randi()%2
+	var obstacleId = randi()%4
 	match obstacleId:
 		0:
 			$BoxTile.set_cell(NEXT_OBSTACLE,3,0)
@@ -49,6 +49,69 @@ func buildObstacle():
 			NEXT_OBSTACLE += 3
 		1:
 			$BoxTile.set_cell(NEXT_OBSTACLE,3,0)
+			NEXT_OBSTACLE += 3
+			$GrassTop.set_cell(NEXT_OBSTACLE,2,0)
+			NEXT_OBSTACLE += 1
+			$GrassTop.set_cell(NEXT_OBSTACLE,2,2)
+			NEXT_OBSTACLE += 1
+			$GrassTop.set_cell(NEXT_OBSTACLE,2,2)
+			NEXT_OBSTACLE += 1
+			$GrassTop.set_cell(NEXT_OBSTACLE,2,1)
+			NEXT_OBSTACLE += 3
+		2:
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,0)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,1)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,3)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,4)
+			NEXT_OBSTACLE += 3
+		3:
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,0)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,1)
+			$SluntPlane.set_cell(NEXT_OBSTACLE,2,0)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			$SluntPlane.set_cell(NEXT_OBSTACLE,2,1)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			$SluntPlane.set_cell(NEXT_OBSTACLE,2,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			$SluntPlane.set_cell(NEXT_OBSTACLE,2,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			$SluntPlane.set_cell(NEXT_OBSTACLE,2,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			$SluntPlane.set_cell(NEXT_OBSTACLE,2,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			$SluntPlane.set_cell(NEXT_OBSTACLE,2,2)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,2)
+			$SluntPlane.set_cell(NEXT_OBSTACLE,2,3)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,3)
+			$SluntPlane.set_cell(NEXT_OBSTACLE,2,4)
+			NEXT_OBSTACLE += 1
+			$SluntPlane.set_cell(NEXT_OBSTACLE,3,4)
 			NEXT_OBSTACLE += 3
 			$GrassTop.set_cell(NEXT_OBSTACLE,2,0)
 			NEXT_OBSTACLE += 1
